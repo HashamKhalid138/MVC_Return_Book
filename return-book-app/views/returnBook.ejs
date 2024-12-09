@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return Book</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        form {
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        label, input, button {
+            display: block;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Return Book</h1>
+    <form action="/return" method="POST">
+        <label for="bookId">Book ID:</label>
+        <input type="text" id="bookId" name="bookId" required>
+        <label for="userId">User ID:</label>
+        <input type="text" id="userId" name="userId" required>
+        <label for="isLate">Returned Late:</label>
+        <input type="checkbox" id="isLate" name="isLate">
+        <button type="submit">Return Book</button>
+    </form>
+
+    <% if (message) { %>
+        <p><%= message %></p>
+    <% } %>
+</body>
+</html>
